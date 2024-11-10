@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <title>Xin chào bạn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký | Quán Cà Phê</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1> Chào Mừng các bạn đến trang web của chúng tôi!</h1>
-  <p> Tôi tên là Văn Phú Quang.</p>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <h1>Quán Cà Phê</h1>
+            </div>
+            <div class="tab">
+                <button class="tablinks" onclick="openForm(event, 'Login')">Đăng Nhập</button>
+                <button class="tablinks" onclick="openForm(event, 'Register')">Đăng Ký</button>
+            </div>
+
+            <div id="Login" class="tabcontent">
+                <h2>Đăng Nhập</h2>
+                <form action="#" method="POST">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit" class="btn">Đăng Nhập</button>
+                </form>
+            </div>
+
+            <div id="Register" class="tabcontent" style="display:none;">
+                <h2>Đăng Ký</h2>
+                <form action="#" method="POST">
+                    <label for="new-username">Tên đăng nhập</label>
+                    <input type="text" id="new-username" name="new-username" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="new-password">Mật khẩu</label>
+                    <input type="password" id="new-password" name="new-password" required>
+
+                    <button type="submit" class="btn">Đăng Ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openForm(evt, formName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
-<p> víp bờ kè</p>
-<a href="https://www.facebook.com/quangvans97">Nhấp vào đây truy cập Example</a>
