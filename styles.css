@@ -1,14 +1,9 @@
-/* styles.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* Nền */
 body {
     position: relative;
-    background-color: #f7f3e9; /* Màu nền phía sau hình ảnh */
+    margin: 0;
+    height: 100vh;
+    background-color: #f7f3e9; /* Màu nền phía sau ảnh */
 }
 
 body::before {
@@ -23,91 +18,23 @@ body::before {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    opacity: 0.5; /* Độ mờ, giá trị từ 0 (trong suốt) đến 1 (không trong suốt) */
-    z-index: -1; /* Đưa hình nền ra phía sau nội dung */
+    opacity: 0.5; /* Độ mờ của nền */
+    z-index: -1; /* Đưa hình nền ra sau nội dung */
 }
 
+/* Khung đăng nhập và đăng ký */
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Căn giữa theo chiều dọc */
+}
+
+.form-container {
     width: 400px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo h1 {
-    text-align: center;
-    font-size: 2em;
-    color: #8b4513;
-    margin-bottom: 20px;
-}
-
-.tab {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.tablinks {
-    padding: 10px 20px;
-    background-color: #e0dacb;
-    color: #8b4513;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-.tablinks.active, .tablinks:hover {
-    background-color: #8b4513;
-    color: #fff;
-}
-
-.tabcontent {
-    display: none;
-}
-
-.tabcontent h2 {
-    text-align: center;
-    color: #8b4513;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input[type="text"], input[type="password"], input[type="email"] {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-input:focus {
-    border-color: #8b4513;
-}
-
-.btn {
-    padding: 10px;
-    background-color: #8b4513;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #a0522d;
+    z-index: 1; /* Đảm bảo form nằm trên nền mờ */
 }
